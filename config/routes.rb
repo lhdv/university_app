@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   
   get 'about', to: 'pages#about'
   get 'courses/new', to: 'courses#new'
-  root 'pages#index'
+  root 'courses#index'
   
 end
