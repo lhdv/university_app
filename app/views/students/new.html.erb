@@ -1,0 +1,39 @@
+<% if @student.errors.any? %>
+  <%= pluralize(@student.errors.count, 'error') %> prohibited your profile from beign created
+  <ul>
+    <% @student.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="container">
+  <div class="row center sign-up-card">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">Sign up</h3>
+        <div class="row">
+          <%= form_for @student, html: { class: 'col s12'} do |f| %>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.label :name %>
+                <%= f.text_field :name, placeholder: 'Enter your name', autofocu: true %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.label :email %>
+                <%= f.email_field :email, placeholder: 'Enter your email' %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.submit "Sign Up", class: 'btn waves-effect waves-light right' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
