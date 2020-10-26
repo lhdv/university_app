@@ -1,0 +1,20 @@
+<%= form_with scope: :session, url: login_path, html: { class: 'col s12'} do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+    123123123
+      <%= f.submit 'Login', class: 'btn waves-effect waves-light right' %>
+    </div>
+  </div>
+<% end %>
