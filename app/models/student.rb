@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  has_secure_password
+  
   VAL_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   before_save { self.email = email.downcase }

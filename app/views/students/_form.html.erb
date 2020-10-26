@@ -1,14 +1,26 @@
 <%= form_for @student, html: { class: 'col s12'} do |f| %>
   <div class="row">
     <div class="input-field col s12">
-      <%= f.label :name %>
+      <%= f.label :name, class: "active" %>
       <%= f.text_field :name, placeholder: 'Enter your name', autofocu: true %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <%= f.label :email %>
+      <%= f.label :email, class: "active" %>
       <%= f.email_field :email, placeholder: 'Enter your email' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :password, class: "active" %>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :password_confirmation, class: "active" %>
+      <%= f.password_field :password_confirmation %>
     </div>
   </div>
   <div class="row">
