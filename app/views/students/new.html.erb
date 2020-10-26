@@ -1,11 +1,4 @@
-<% if @student.errors.any? %>
-  <%= pluralize(@student.errors.count, 'error') %> prohibited your profile from beign created
-  <ul>
-    <% @student.errors.full_messages.each do |e| %>
-    <li><%= e %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'layouts/messages', resource: @student %>
 
 <div class="container">
   <div class="row center sign-up-card">
