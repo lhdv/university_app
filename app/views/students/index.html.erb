@@ -4,6 +4,8 @@
 
 <div class="row">
   <% @students.each do |s| %>
-    <%= render s %>
+    <%= render s do %>
+      <%= link_to 'View Profile', s %>
+    <% end %>
   <% end %>
 </div>

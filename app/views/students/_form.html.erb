@@ -1,0 +1,20 @@
+<%= form_for @student, html: { class: 'col s12'} do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Enter your name', autofocu: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: 'Enter your email' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.submit nil, class: 'btn waves-effect waves-light right' %>
+      <%= link_to 'Back', students_path, class: 'btn waves-effect waves-light right' %>
+    </div>
+  </div>
+<% end %>
