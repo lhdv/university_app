@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   
   has_many :student_courses
-  has_many :students, trough: :student_courses
+  has_many :students, through: :student_courses
 
   validates :short_name, presence: true
   validates :short_name, length: {minimum: 3, maximum: 15}

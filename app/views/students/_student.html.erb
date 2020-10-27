@@ -3,7 +3,16 @@
     <div class="card-content white-text">
       <span class="card-title"><%= student.name %></span>
       <p><%= student.email %></p>
-      <p>Course Enrollments: None</p>
+      <p>Course Enrollments: <%= student.courses.count %></p>
+      <% if student.courses.empty? %>
+        None
+      <% else %>
+        <ul>
+          <% student.courses.each do |c| %>
+          <li><%= c.name %></li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
     <div class="card-action">
       <%= yield %>
