@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <%= render @student  do %>
-    <%= link_to 'Edit Profile', edit_student_path(@student) %>
+      <% if current_user == @student %>
+      <%= link_to 'Edit Profile', edit_student_path(@student) %>
+      <% end %>
     <% end %>
   </div>
 </div>

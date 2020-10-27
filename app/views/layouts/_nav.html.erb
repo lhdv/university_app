@@ -1,13 +1,21 @@
 <header>
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
+    <% if logged_in? %>
+    <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to 'Login', login_path %></li>
+    <% end %>
     <li><a href="#!">two</a></li>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">one</a></li>
+    <% if logged_in? %>
+    <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to 'Login', login_path %></li>
+    <% end %>
     <li><a href="#!">two</a></li>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
@@ -20,8 +28,10 @@
         <%= link_to 'TechBR', root_path, class: "brand-logo right" %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Enrollments</a></li>
+          <li><%= link_to 'Courses', root_path %></li>
+          <% if logged_in? %>
+          <li><%= link_to 'Students', students_path %></li>
+          <% end %>
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
@@ -30,8 +40,10 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Courses</a></li>
-    <li><a href="#">Enrollments</a></li>
+    <li><%= link_to 'Courses', root_path %></li>
+    <% if logged_in? %>
+    <li><%= link_to 'Students', students_path %></li>
+    <% end %>
     <!-- Dropdown Trigger -->
     <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
